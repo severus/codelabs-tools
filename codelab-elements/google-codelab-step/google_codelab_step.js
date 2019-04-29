@@ -175,7 +175,7 @@ class CodelabStep extends HTMLElement {
     dom.insertChildAt(this.inner_, title, 0);
 
     // Add prettyprint to code blocks.
-    const codeElements = this.inner_.querySelectorAll('pre code');
+    const codeElements = this.inner_.querySelectorAll('pre code:not(.language-console)');
     codeElements.forEach((el) => {
       const code = window['prettyPrintOne'](el.innerHTML);
       el.innerHTML = code;
